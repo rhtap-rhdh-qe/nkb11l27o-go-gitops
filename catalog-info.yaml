@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nkb11l27o-go-gitops
+  description: This is GitOps manifest for nkb11l27o-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=nkb11l27o-go
+    backstage.io/kubernetes-id: nkb11l27o-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nkb11l27o-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nkb11l27o-go
